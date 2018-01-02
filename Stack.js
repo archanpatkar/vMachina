@@ -18,4 +18,9 @@ class Stack
         this.st--;
         return top;
     }
+
+    visit(op)
+    {
+        
+    }
 }
