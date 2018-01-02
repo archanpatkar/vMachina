@@ -1,0 +1,24 @@
+{
+  "name": "vmachina",
+  "version": "1.0.0",
+  "description": "A Stack Virtual Machine written in Javascript / Node.js",
+  "main": "machine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archanpatkar/vMachina.git"
+  },
+  "keywords": [
+    "Stack",
+    "Virtual",
+    "Machine"
+  ],
+  "author": "Archan Patkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/archanpatkar/vMachina/issues"
+  },
+  "homepage": "https://github.com/archanpatkar/vMachina#readme"
+}
