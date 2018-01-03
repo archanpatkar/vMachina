@@ -19,9 +19,9 @@ class Stack
         return top;
     }
 
-    visit(op)
+    visit(op,ins)
     {
-        op(this);
+        op(this,ins);
     }
 }
 
