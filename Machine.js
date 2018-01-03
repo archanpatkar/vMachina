@@ -38,6 +38,7 @@ class vMachina
                 }
                 else
                 {
+                    console.log(ins)
                     console.log(this.operations[ins])
                     this.stack.visit(this.operations[ins],this.instructions);
                 }
