@@ -7,9 +7,12 @@ class Instructions{
 
     *[Symbol.iterator]()
     {
-        for(; this.ip < this.instructions.length ; this.ip++)
+        while(this.ip < this.instructions.length)
         {
             yield instruction[this.ip];
+            this.ip++;
         }
     }
 }
+
+module.exports = Instructions
