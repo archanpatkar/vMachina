@@ -3,13 +3,13 @@ class Stack
     constructor()
     {
         this.stk = [];
-        this.st = 0;
+        this.st = -1;
     }
 
     push(v)
     {
         this.st++;
-        this.stk[st] = v;
+        this.stk[this.st] = v;
     }
 
     pop()
@@ -21,6 +21,8 @@ class Stack
 
     visit(op)
     {
-        
+        op(this);
     }
 }
+
+module.exports = Stack;
