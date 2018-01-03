@@ -2,8 +2,9 @@
   "name": "vmachina",
   "version": "1.0.0",
   "description": "A Stack Virtual Machine written in Javascript / Node.js",
-  "main": "machine.js",
+  "main": "Main.js",
   "scripts": {
+    "start":"node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
