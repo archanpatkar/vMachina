@@ -1,4 +1,5 @@
 push->10
 push->20
 lt
-print
+push->{print}
+if 
