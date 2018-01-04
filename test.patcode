@@ -1,6 +1,9 @@
-push->10
-push->20
+push-5
+push-20
 print
-lt
-push->{print}
-if
+gt
+print
+push-{push-100;push-200;print}
+push-{push-1000;push-2000;print}
+print
+ifelse
