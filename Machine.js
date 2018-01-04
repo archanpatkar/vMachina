@@ -13,21 +13,19 @@ class vMachina
 
     execute()
     {
-        for(let ins of this.instructions)
+        for(let i = 0; i < this.instructions.length; i++)
         {
-            console.log(ins);
+            var ins = this.instructions[i]
             if(ins.startsWith("push"))
             {
-                let arr = ins.split("->");
-                if(arr[0] == "push")
-                {
-                    this.stack.push(arr[1]);
-                }
+                var val = ins.substring(ins.indexOf('-')+1);
+                this.stack.push(val);
             }
             else
             {
                 if(ins.startsWith("print"))
                 {
+                    console.log("--|Stack|--")
                     for(let i = this.stack.st; i >= 0 ; i--)
                     {
                         console.log("----")
@@ -38,7 +36,6 @@ class vMachina
                 else
                 {
                     this.stack.visit(this.operations[ins],this.instructions);
-                    console.log(this.instructions);
                 }
             }
         }
