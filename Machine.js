@@ -25,7 +25,7 @@ class vMachina
             {
                 if(ins.startsWith("print"))
                 {
-                    console.log("--|Stack|--")
+                    console.log("---|Stack|---")
                     for(let i = this.stack.st; i >= 0 ; i--)
                     {
                         console.log("----")
