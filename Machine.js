@@ -6,7 +6,7 @@ class vMachina
     constructor(operations,instructions)
     {
         this.stack = new Stack();
-        // this.instructions = new Instructions(instructions);
+        // this.instructions = new Instructions(instructions); IN PROGRESS
         this.instructions = instructions;
         this.operations = operations;
     }
@@ -19,7 +19,6 @@ class vMachina
             if(ins.startsWith("push"))
             {
                 let arr = ins.split("->");
-                console.log(arr);
                 if(arr[0] == "push")
                 {
                     this.stack.push(arr[1]);
@@ -38,9 +37,8 @@ class vMachina
                 }
                 else
                 {
-                    console.log(ins)
-                    console.log(this.operations[ins])
                     this.stack.visit(this.operations[ins],this.instructions);
+                    console.log(this.instructions);
                 }
             }
         }
