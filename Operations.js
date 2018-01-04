@@ -3,9 +3,10 @@ var Operations =
     "if":function(stack,instructions)
     {
         console.log("in if <----------------------------->");
+        console.log("INS -> " + instructions)
         let ifblock = stack.pop();
         console.log(ifblock);
-        let condition = (stack.pop() == "true");
+        let condition = stack.pop();
         if(condition)
         {
             ifblock = ifblock.trim();
@@ -15,7 +16,8 @@ var Operations =
             for(let comm of ifblock)
             {
                 instructions.push(comm)
-            }
+            }   
+            console.log("INS -> " + instructions)
         }
     },
     "add":function(stack)
