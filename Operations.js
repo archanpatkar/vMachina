@@ -2,22 +2,43 @@ var Operations =
 {
     "if":function(stack,instructions)
     {
-        console.log("in if <----------------------------->");
-        console.log("INS -> " + instructions)
         let ifblock = stack.pop();
-        console.log(ifblock);
         let condition = stack.pop();
         if(condition)
         {
             ifblock = ifblock.trim();
             ifblock = ifblock.replace(/[{}]/g, "");
             ifblock = ifblock.split(";");
-            console.log(ifblock)
             for(let comm of ifblock)
             {
                 instructions.push(comm)
             }   
-            console.log("INS -> " + instructions)
+        }
+    },
+    "ifelse":function(stack,instructions)
+    {
+        let elseblock = stack.pop();
+        let ifblock = stack.pop();
+        let condition = stack.pop();
+        if(condition)
+        {
+            ifblock = ifblock.trim();
+            ifblock = ifblock.replace(/[{}]/g, "");
+            ifblock = ifblock.split(";");
+            for(let comm of ifblock)
+            {
+                instructions.push(comm)
+            }   
+        }
+        else
+        {
+            elseblock = elseblock.trim();
+            elseblock = elseblock.replace(/[{}]/g, "");
+            elseblock = elseblock.split(";");
+            for(let comm of elseblock)
+            {
+                instructions.push(comm)
+            } 
         }
     },
     "add":function(stack)
