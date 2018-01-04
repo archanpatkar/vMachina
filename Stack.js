@@ -21,7 +21,10 @@ class Stack
 
     visit(op,ins)
     {
-        op(this,ins);
+        if(op !== undefined)
+        {
+            op(this,ins);
+        }
     }
 }
 
