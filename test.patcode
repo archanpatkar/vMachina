@@ -1,5 +1,6 @@
 push->10
 push->20
+print
 lt
 push->{print}
-if 
+if
