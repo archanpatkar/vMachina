@@ -19,14 +19,6 @@ class Stack
         this.st--;
         return top;
     }
-
-    visit(op,ins)
-    {
-        if(op !== undefined)
-        {
-            op(this,ins);
-        }
-    }
 }
 
 module.exports = Stack;
