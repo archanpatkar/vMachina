@@ -1,7 +1,8 @@
-class Instructions{
+class Instructions
+{
     constructor(inst)
     {
-        this.instructions = [];
+        this.instructions = inst;
         this.ip = 0;
     }
 
@@ -9,10 +10,17 @@ class Instructions{
     {
         while(this.ip < this.instructions.length)
         {
-            yield instruction[this.ip];
+            yield this.instructions[this.ip];
             this.ip++;
         }
     }
+
+    insert(command)
+    {
+        this.ip++;
+        this.instructions.splice(this.ip,0,command);
+    }
+
 }
 
 module.exports = Instructions
