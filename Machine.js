@@ -6,16 +6,14 @@ class vMachina
     constructor(operations,instructions)
     {
         this.stack = new Stack();
-        // this.instructions = new Instructions(instructions); IN PROGRESS
-        this.instructions = instructions;
+        this.instructions = new Instructions(instructions);
         this.operations = operations;
     }
 
-    execute()
+    executeThis(inst)
     {
-        for(let i = 0; i < this.instructions.length; i++)
+        for(let ins of inst)
         {
-            var ins = this.instructions[i]
             if(ins.startsWith("push"))
             {
                 var val = ins.substring(ins.indexOf('-')+1);
@@ -28,17 +26,35 @@ class vMachina
                     console.log("---|Stack|---")
                     for(let i = this.stack.st; i >= 0 ; i--)
                     {
-                        console.log("----")
-                        console.log(this.stack.stk[i])
-                        console.log("----")
+                        console.log("----");
+                        console.log(this.stack.stk[i]);
+                        console.log("----");
                     }
                 }
                 else
                 {
-                    this.stack.visit(this.operations[ins],this.instructions);
+                    if(ins.startsWith("repeat"))
+                    {
+                        let times = Number(ins.substring(ins.indexOf('@')+1));
+                        this.operations["repeat"](times,this.stack,this);
+
+                    }
+                    else
+                    {
+                        let op = this.operations[ins]
+                        if(op !== undefined)
+                        {
+                            op(this.stack,this);
+                        }
+                    }
                 }
             }
         }
+    }
+
+    execute()
+    {
+        this.executeThis(this.instructions);
     }
 
 }
