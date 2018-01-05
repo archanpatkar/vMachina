@@ -1,6 +1,6 @@
 var Operations = 
 {
-    "if":function(stack,instructions)
+    "if":function(stack,machine)
     {
         let ifblock = stack.pop();
         let condition = stack.pop();
@@ -9,13 +9,10 @@ var Operations =
             ifblock = ifblock.trim();
             ifblock = ifblock.replace(/[{}]/g, "");
             ifblock = ifblock.split(";");
-            for(let comm of ifblock)
-            {
-                instructions.push(comm)
-            }   
+            machine.executeThis(ifblock);
         }
     },
-    "ifelse":function(stack,instructions)
+    "ifelse":function(stack,machine)
     {
         let elseblock = stack.pop();
         let ifblock = stack.pop();
@@ -25,22 +22,30 @@ var Operations =
             ifblock = ifblock.trim();
             ifblock = ifblock.replace(/[{}]/g, "");
             ifblock = ifblock.split(";");
-            for(let comm of ifblock)
-            {
-                instructions.push(comm)
-            }   
+            machine.executeThis(ifblock);
         }
         else
         {
             elseblock = elseblock.trim();
             elseblock = elseblock.replace(/[{}]/g, "");
             elseblock = elseblock.split(";");
-            for(let comm of elseblock)
-            {
-                instructions.push(comm)
-            } 
+            machine.executeThis(elseblock);
         }
     },
+    "repeat":function(times,stack,machine)
+    {
+        let repeatblock = stack.pop();
+        repeatblock = repeatblock.trim();
+        repeatblock = repeatblock.replace(/[{}]/g, "");
+        repeatblock = repeatblock.split(";");
+        let counter = 0;
+        while(counter < times)
+        {
+            machine.executeThis(repeatblock);
+            counter++;
+        }
+    },
+    "goto":function(){},
     "add":function(stack)
     {
         let n1 = Number(stack.pop());
