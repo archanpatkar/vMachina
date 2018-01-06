@@ -7,6 +7,7 @@ class vMachina
     {
         this.stack = new Stack();
         this.instructions = new Instructions(instructions);
+        this.globals = {};
         this.operations = operations;
     }
 
@@ -35,16 +36,23 @@ class vMachina
                 {
                     if(ins.startsWith("repeat"))
                     {
-                        let times = Number(ins.substring(ins.indexOf('@')+1));
-                        this.operations["repeat"](times,this.stack,this);
-
+                        var [head,body]= ins.split("->");
+                        let times = Number(head.substring(ins.indexOf('@')+1));
+                        this.operations["repeat"](times,body,this.stack,this);
                     }
                     else
                     {
-                        let op = this.operations[ins]
-                        if(op !== undefined)
+                        if(ins.startsWith("global"))
                         {
-                            op(this.stack,this);
+
+                        }
+                        else
+                        {
+                            let op = this.operations[ins]
+                            if(op !== undefined)
+                            {
+                                op(this.stack,this);
+                            }
                         }
                     }
                 }
