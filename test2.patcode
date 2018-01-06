@@ -1,2 +1,3 @@
-push-{push-100;push-200;print}
-repeat@5
+repeat*5 -> {push-100;push-200;print}
+global i = 10
+var i = 50
