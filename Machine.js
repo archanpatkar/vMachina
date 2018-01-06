@@ -37,7 +37,7 @@ class vMachina
                     if(ins.startsWith("repeat"))
                     {
                         var [head,body]= ins.split("->");
-                        let times = Number(head.substring(ins.indexOf('@')+1));
+                        let times = Number(head.substring(ins.indexOf('*')+1));
                         this.operations["repeat"](times,body,this.stack,this);
                     }
                     else
