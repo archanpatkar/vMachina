@@ -3,7 +3,5 @@ push-20
 print
 lt
 print
-push-{push-100;push-200}
-push-{push-1000;push-2000}
-ifelse
+ifelse -> {push-1000;push-2000}|{push-100;push-200}
 print
