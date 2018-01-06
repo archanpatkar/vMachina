@@ -32,20 +32,25 @@ var Operations =
             machine.executeThis(elseblock);
         }
     },
-    "repeat":function(times,stack,machine)
+    "repeat":function(times,body,stack,machine)
     {
-        let repeatblock = stack.pop();
+        let repeatblock = body;
+        console.log("Body -> " + body)
+        console.log("Times -> " + times)
         repeatblock = repeatblock.trim();
         repeatblock = repeatblock.replace(/[{}]/g, "");
         repeatblock = repeatblock.split(";");
+        console.log("Commands -> " + repeatblock)
         let counter = 0;
         while(counter < times)
         {
+            console.log("In Loop")
             machine.executeThis(repeatblock);
             counter++;
         }
     },
     "goto":function(){},
+    "global":function(){},
     "add":function(stack)
     {
         let n1 = Number(stack.pop());
