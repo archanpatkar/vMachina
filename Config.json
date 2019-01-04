@@ -1,0 +1,11 @@
+{
+    "repeat":
+    {
+        "identifier":"repeat",
+        "symbol":"*"
+    },
+    "if":{},
+    "ifelse":{},
+    "push":{},
+    "print":{}
+}
