@@ -15,7 +15,7 @@ class Stack
     pop()
     {
         let top = this.stk[this.st];
-        this.stk[this.st] = "";
+        this.stk[this.st] = undefined;
         this.st--;
         return top;
     }
