@@ -1,8 +1,15 @@
 var fs = require("fs");
 
-function parse(file)
+function splitString(file)
 {
     return fs.readFileSync(file).toString("utf8").split("\n");
 }
 
-module.exports.parse = parse;
+function tokenize(string)
+{
+  return string.forEach( (line) => line.split(" "); )
+}
+
+console.log(splitString("test.patcode"))
+
+// module.exports.parse = parse;
