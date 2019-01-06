@@ -1,6 +1,25 @@
 # vMachina
 A Stack Virtual Machine written in Javascript
 
+### `Example Usage`
+```javascript
+const m = new vMachina();
+m.run([
+    ["push",10],
+    ["push",8],
+    ["call"],
+    ["push",10],
+    ["push",20],
+    ["add"],
+    ["print"],
+    ["halt"],
+    ["push",2],
+    ["multiply"],
+    ["print"],
+    ["ret"]
+]);
+```
+
 ### Operations
 
 | Operation 	| Operands 	|                                                   Behaviour                                                  	|
