@@ -1,28 +1,6 @@
-// var Parser = require("./Parser");
-
-// var Operations = require("./Operations");
-
-// var vMachina = require("./Machine")
-
-// let vm = new vMachina(Operations,Parser.parse(__dirname+"/test2.patcode"));
-
-// vm.execute();
-
-// console.log("Execution Complete!");
-// console.log("----Execution Stats----");
-// console.log(vm.stack);
-// console.log(vm.instructions);
-
-const vMachina = require("./NEWVM");
+const vMachina = require("./Machine");
 
 const m = new vMachina();
-
-// m.code`
-// push ${10}
-// push ${20}
-// add
-// print
-// `
 
 m.run([
     ["push",10],
