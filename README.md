@@ -1,5 +1,5 @@
 # vMachina
-A Stack Virtual Machine written in Javascript. The Machine itself is completly extensible with facility to add **custom operations** to it with complete control over **internal datastructures** consisting of infinte stack and memory to modify and transform it to your needs. It also allows operations with parameters like push which can take **variable arguments** and also work with **variable operands** from the stack.
+A Stack Virtual Machine written in Javascript. The Machine itself is completly extensible with facility to add **custom operations** to it with complete control over **internal datastructures** consisting of **infinte stack** and **infinte memory** to modify and transform it to your needs. It also allows operations with parameters like push which can take **variable arguments** and also work with **variable operands** from the stack.
 
 ### `Example Usage`
 ```javascript
