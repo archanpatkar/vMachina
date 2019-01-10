@@ -1,7 +1,7 @@
 # <img src="./vmachina.svg">
 An Extensible Stack Virtual Machine written in Javascript. The Machine itself is completly extensible with facility to add **custom operations** to it with complete control over **internal datastructures** consisting of **infinte stack** and **infinte memory** to modify and transform it to your needs. It also allows you to create operations with parameters like push which can take **variable arguments** and also work with **variable operands** from the stack.
 
-### `Architecture`
+### `Organization`
 <img src="vmarchitechture.png"/>
 
 ### `Operations`
