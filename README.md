@@ -19,6 +19,8 @@ m.run([
     ["ret"]
 ]);
 ```
+### `Architecture`
+<img src="vmarchitechture.png"/>
 
 ### `Operations`
 
