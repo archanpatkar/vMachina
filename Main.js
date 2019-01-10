@@ -14,7 +14,6 @@ m.run([
     ["push",0],
     ["push",100],
     ["store"],
-    ["push",0],
     ["load"],
     ["print"]
 ]);
