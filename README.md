@@ -20,7 +20,7 @@ m.run([
 ]);
 ```
 ### `Architecture`
-<img src="vmarchitecture.png"/>
+<img src="vmarchitechture.png"/>
 
 ### `Operations`
 
