@@ -1,24 +1,6 @@
 # <img src="./vmachina.svg">
 An Extensible Stack Virtual Machine written in Javascript. The Machine itself is completly extensible with facility to add **custom operations** to it with complete control over **internal datastructures** consisting of **infinte stack** and **infinte memory** to modify and transform it to your needs. It also allows you to create operations with parameters like push which can take **variable arguments** and also work with **variable operands** from the stack.
 
-### `Example Usage`
-```javascript
-const m = new vMachina();
-m.run([
-    ["push",10],
-    ["push",8],
-    ["call"],
-    ["push",10],
-    ["push",20],
-    ["add"],
-    ["print"],
-    ["halt"],
-    ["push",2],
-    ["multiply"],
-    ["print"],
-    ["ret"]
-]);
-```
 ### `Architecture`
 <img src="vmarchitechture.png"/>
 
@@ -42,3 +24,24 @@ m.run([
 |    swap   	|     2    	| Pops 2 Values and pushing them in the reverse order which swaps them                                         	|
 |   print   	|     1    	| Pops a Values from the Stack and prints it                                                                   	|
 |    halt   	|     -    	| Halts the machine                                                                                            	|
+
+
+
+### `Example Usage`
+```javascript
+const m = new vMachina();
+m.run([
+    ["push",10],
+    ["push",8],
+    ["call"],
+    ["push",10],
+    ["push",20],
+    ["add"],
+    ["print"],
+    ["halt"],
+    ["push",2],
+    ["multiply"],
+    ["print"],
+    ["ret"]
+]);
+```
